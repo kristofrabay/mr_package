@@ -1,0 +1,12 @@
+Package: mr.kristof
+Type: Package
+Title: Demo R package for the Mastering R course
+Version: 0.1.0
+Author: Kristof Rabay <kristof.rabay@gmail.com>
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Demo R package for the Mastering R course
+    Learning how to create R packages
+License: AGPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
