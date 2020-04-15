@@ -2,10 +2,13 @@
 % Please edit documentation in R/functions.R
 \name{forint}
 \alias{forint}
-\title{Function formatting numbers as Hungarian Forints}
+\title{Formatting numbers as Hungarian Forints}
 \usage{
 forint(x)
 }
+\arguments{
+\item{x}{number}
+}
 \description{
-Function formatting numbers as Hungarian Forints
+Wrapper around \code{scales} package
 }

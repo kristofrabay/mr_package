@@ -2,10 +2,13 @@
 % Please edit documentation in R/functions.R
 \name{get_bitcoin_price}
 \alias{get_bitcoin_price}
-\title{Function retrying to parse data from Binance API}
+\title{Hitting the Binance API to get the most recent price of Bitcoin in USD}
 \usage{
 get_bitcoin_price(retried = 0)
 }
+\arguments{
+\item{retried}{Number of retries in the previous step}
+}
 \description{
-Function retrying to parse data from Binance API
+This is a wrapper around \code{binancer} package...
 }
