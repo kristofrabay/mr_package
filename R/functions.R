@@ -51,5 +51,4 @@ hist_FX <- function(from, to, num_days) {
                     rate = as.numeric(unlist(content_call)))[order(-date)])
 
 }
-hist_FX('usd', 'huf', 3)
->>>>>>> 9f8913bd678a50ab671bf9ed0c6a2f9f70b85a3d
+
