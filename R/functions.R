@@ -20,7 +20,7 @@ get_bitcoin_price <- function(retried = 0) {
 #' @export
 #' @param x number
 #' @importFrom scales dollar
-forint <- function(x) {dollar(x, suffix = "Ft", prefix = NULL)}
+forint <- function(x) {dollar(x, suffix = " HUF", prefix = NULL)}
 
 
 
