@@ -21,3 +21,34 @@ get_bitcoin_price <- function(retried = 0) {
 #' @param x number
 #' @importFrom scales dollar
 forint <- function(x) {dollar(x, suffix = "Ft", prefix = NULL)}
+
+
+
+#' Querying historical exchange rates
+#'
+#' Specify the FXs and the days to go back in time
+#' @export
+#' @param from specify ccy code for fx to convert from
+#' @param to specify ccy code for fx to convert to
+#' @param num_days specify number of days to go back in time - returned days may be less due to non-business dates
+#' @importFrom httr GET
+#' @importFrom httr content
+#' @import data.table
+hist_FX <- function(from, to, num_days) {
+
+  call <- GET(
+    'https://api.exchangeratesapi.io/history',
+    query = list(
+      start_at = Sys.Date() - num_days,
+      end_at   = Sys.Date(),
+      base     = toupper(from),
+      symbols  = toupper(to)
+    ))
+
+  content_call <- content(call)$rates
+
+  return(data.table(date = as.Date(names(content_call)),
+                    rate = as.numeric(unlist(content_call)))[order(-date)])
+
+}
+hist_FX('usd', 'huf', 3)
